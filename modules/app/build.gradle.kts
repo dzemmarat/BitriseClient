@@ -1,16 +1,17 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id("dev.mrz.android.application")
+    id("dev.mrz.android.application.compose")
+    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "ru.mrz.profnotes"
-    compileSdk = 33
+    namespace = AppSettings.ID
+    compileSdk = AppSettings.COMPILE_SDK
 
     defaultConfig {
-        applicationId = "ru.mrz.profnotes"
-        versionCode = 1
-        versionName = "1.0.0"
+        applicationId = AppSettings.ID
+        versionCode = AppSettings.VERSION_CODE
+        versionName = AppSettings.VERSION_NAME
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         vectorDrawables {
@@ -51,19 +52,23 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
-    implementation("androidx.activity:activity-compose:1.5.1")
-    implementation(platform("androidx.compose:compose-bom:2022.10.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2022.10.00"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    // AndroidX
+    implementation(libs.bundles.androidx)
+    implementation(libs.android.core.splash)
+
+    // Accompanist
+    implementation(libs.bundles.accompanist)
+
+    // Koin
+    implementation(libs.bundles.koin)
+
+    // Elmslie
+    implementation(libs.bundles.elmslie)
+
+    // TEST
+    testImplementation(libs.bundles.test)
+    debugImplementation(libs.compose.debug.test.manifest)
+
+    // Navigator
+    implementation(libs.bundles.navigator)
 }

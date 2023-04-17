@@ -15,6 +15,10 @@ subprojects {
     apply {
         plugin("io.gitlab.arturbosch.detekt")
     }
+    repositories {
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
     detekt {
         config = rootProject.files("config/detekt/detekt.yml")
         baseline = rootProject.file("config/detekt/baseline.xml")
