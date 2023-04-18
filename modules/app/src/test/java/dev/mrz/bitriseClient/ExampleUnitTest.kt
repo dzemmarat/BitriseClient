@@ -1,4 +1,4 @@
-package dev.mrz.bitriseclient
+package dev.mrz.bitriseClient
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package dev.mrz.bitriseclient.ui.theme
+package dev.mrz.bitriseClient.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -1,4 +1,4 @@
-package dev.mrz.bitriseclient.ui.theme
+package dev.mrz.bitriseClient.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

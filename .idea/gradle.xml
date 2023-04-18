@@ -24,6 +24,7 @@
             <option value="$PROJECT_DIR$/build-logic" />
             <option value="$PROJECT_DIR$/build-logic/convention" />
             <option value="$PROJECT_DIR$/modules/app" />
+            <option value="$PROJECT_DIR$/modules/feature/feature_login" />
           </set>
         </option>
       </GradleProjectSettings>
